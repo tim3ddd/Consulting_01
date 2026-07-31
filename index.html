@@ -9,125 +9,7 @@
 <link as="image" fetchpriority="high" href="assets/hero-graphic-v2-preview.webp" rel="preload" type="image/webp"/>
 <link as="image" href="assets/expert-factory-logo.webp" rel="preload" type="image/webp"/>
 <link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2313201d'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-family='Arial' font-size='24' font-weight='700' fill='%2343cfaa'%3EEF%3C/text%3E%3C/svg%3E" rel="icon"/>
-<style>
-:root{
-  --bg:#f3f8f6;
-  --card:#ffffff;
-  --text:#13201d;
-  --muted:#60716c;
-  --line:#dbe8e4;
-  --mint:#43cfaa;
-  --mint-dark:#0b8e6c;
-  --mint-soft:#d9fbf1;
-  --shadow:0 18px 46px rgba(23,53,44,.10);
-  --radius:28px;
-  --container:1240px;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:Inter,Arial,sans-serif;color:var(--text);background:linear-gradient(180deg,#fbfdfc 0%,var(--bg) 100%);line-height:1.5}
-a{text-decoration:none;color:inherit}
-img{display:block;max-width:100%}
-.container{width:min(var(--container),calc(100% - 32px));margin:0 auto}
-header{position:sticky;top:0;z-index:50;background:#fbfdfc;border-bottom:1px solid rgba(19,32,29,.07)}
-.top{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:12px 0}
-.brand{display:flex;align-items:center;gap:18px;min-width:0}
-.brand-mark{width:138px;height:auto;object-fit:contain;flex:0 0 auto;border-radius:0}
-.brand-copy strong{display:block;font-size:18px;letter-spacing:.02em}
-.brand-copy span{display:block;color:var(--muted);font-size:13px}
-nav{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
-nav>a:not(.btn){color:var(--muted);font-weight:650;font-size:14px}
-nav>a:hover{color:var(--text)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 22px;border-radius:16px;font-weight:850;transition:.2s ease;border:0;cursor:pointer;font-size:15px}
-.btn.primary{background:linear-gradient(135deg,var(--mint),#28c199);color:#062019;box-shadow:0 14px 30px rgba(67,207,170,.28)}
-.btn.secondary{background:#fff;border:1px solid var(--line);box-shadow:var(--shadow)}
-.btn:hover{transform:translateY(-2px)}
-.hero{padding:50px 0 24px}
-.hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:30px;align-items:center}
-.badge,.pill,.case-tag{display:inline-flex;align-items:center;width:max-content;padding:9px 13px;border-radius:999px;background:var(--mint-soft);color:var(--mint-dark);font-weight:800;font-size:13px}
-h1{font-size:clamp(38px,6vw,70px);line-height:.98;letter-spacing:-.045em;margin:18px 0}
-.lead{font-size:clamp(17px,2vw,20px);color:var(--muted);margin:0 0 22px;max-width:750px}
-.feature-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:24px 0 28px}
-.feature{padding:17px;background:rgba(255,255,255,.84);border:1px solid var(--line);border-radius:19px;box-shadow:var(--shadow)}
-.feature strong{display:block;margin-bottom:5px}
-.actions{display:flex;flex-wrap:wrap;gap:13px}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:23px}
-.stat{padding:20px;background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow)}
-.stat strong{display:block;font-size:29px;line-height:1;color:var(--mint-dark);margin-bottom:8px}
-.stat span{color:var(--muted);font-size:14px}
-.visual-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:34px;overflow:hidden;box-shadow:var(--shadow)}
-.visual-card>img{width:100%;height:auto;background:#eef3f1}
-.visual-caption{position:absolute;left:18px;right:18px;bottom:18px;padding:16px 18px;background:rgba(255,255,255,.96);border:1px solid rgba(19,32,29,.08);border-radius:20px}
-.visual-caption strong{display:block;font-size:21px;margin-bottom:5px}
-.visual-caption span{color:var(--muted)}
-section{padding:44px 0}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:22px;margin-bottom:24px}
-.section-head h2{font-size:clamp(30px,4vw,48px);line-height:1.02;letter-spacing:-.035em;margin:10px 0 0}
-.section-head p{max-width:650px;color:var(--muted);margin:0}
-.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.card{padding:23px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
-.icon{width:48px;height:48px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(135deg,var(--mint-soft),#fff);border:1px solid #ccefe4;font-size:21px}
-.card h3{font-size:22px;margin:12px 0 9px}
-.card p{margin:0;color:var(--muted)}
-.expert{display:grid;grid-template-columns:.92fr 1.08fr;gap:24px;align-items:center}
-.expert-image{background:#fff;border:1px solid var(--line);border-radius:31px;overflow:hidden;box-shadow:var(--shadow)}
-.expert-image img{width:100%}
-.expert ul{margin:18px 0 0;padding-left:20px}
-.expert li{margin-bottom:11px;color:#2b3c37}
-.cases{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:21px}
-.case{background:#fff;border:1px solid var(--line);border-radius:30px;overflow:hidden;box-shadow:var(--shadow);transition:.2s ease}
-.case:hover{transform:translateY(-4px)}
-.case img{width:100%;aspect-ratio:4/3;object-fit:cover;background:#eef3f1}
-.case-body{padding:20px 20px 22px}
-.case-title{font-size:29px;font-weight:880;letter-spacing:-.02em;margin:12px 0 17px;line-height:1.05}
-.case-link{display:inline-flex;align-items:center;gap:8px;color:var(--mint-dark);font-weight:850}
-.process{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
-.step{padding:20px;background:#fff;border:1px solid var(--line);border-radius:23px;box-shadow:var(--shadow)}
-.step-num{width:38px;height:38px;border-radius:13px;background:var(--mint-soft);display:grid;place-items:center;color:var(--mint-dark);font-weight:900;margin-bottom:13px}
-.step h3{font-size:18px;margin:0 0 8px}
-.step p{color:var(--muted);font-size:14px;margin:0}
-.process-note{margin-top:18px;padding:20px 22px;background:linear-gradient(135deg,var(--mint-soft),#fff);border:1px solid #ccefe4;border-radius:22px;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:space-between;gap:18px}
-.process-note strong{display:block;font-size:19px;margin-bottom:4px}
-.process-note span{color:var(--muted)}
-.contact{display:grid;grid-template-columns:.95fr 1.05fr;gap:20px;align-items:start}
-.panel{padding:25px;background:#fff;border:1px solid var(--line);border-radius:31px;box-shadow:var(--shadow)}
-.contact-links{display:grid;gap:12px;margin-top:18px}
-.contact-link{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 17px;border:1px solid var(--line);background:#f9fcfb;border-radius:18px}
-.contact-link span{display:block;color:var(--muted);font-size:14px}
-form{display:grid;gap:14px}
-.field{display:grid;gap:7px}
-label{font-size:14px;color:#31423d}
-input,textarea,select{width:100%;padding:15px 16px;border:1px solid var(--line);border-radius:16px;background:#fcfefd;color:var(--text);font:inherit;outline:none}
-textarea{min-height:120px;resize:vertical}
-.success{display:none;padding:14px 16px;border-radius:16px;background:var(--mint-soft);border:1px solid #c6f1e4;color:var(--mint-dark);font-weight:750}
-.success.error{background:#fff1f1;border-color:#f2c7c7;color:#9d2929}
-footer{padding:30px 0 60px}
-.footer-card{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:22px 25px;background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow)}
-.footer-brand{display:flex;align-items:center;gap:18px}
-.footer-brand img{width:128px;height:auto;object-fit:contain}
-.footer-brand p{margin:4px 0 0;color:var(--muted)}
-.quick{display:flex;gap:14px;flex-wrap:wrap;font-weight:700;color:var(--muted)}
-.floating-cta{position:fixed;right:18px;bottom:18px;z-index:40}
-@media(max-width:1100px){
-  .hero-grid,.expert,.contact{grid-template-columns:1fr}
-  .grid3{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .cases{grid-template-columns:1fr}
-  .process{grid-template-columns:repeat(2,minmax(0,1fr))}
-  nav{display:none}
-}
-@media(max-width:760px){
-  :root{--shadow:0 10px 24px rgba(23,53,44,.08)}
-  .container{width:min(var(--container),calc(100% - 20px))}
-  .brand-mark{width:105px}
-  .brand-copy span{display:none}
-  .feature-grid,.stats,.grid3,.process{grid-template-columns:1fr}
-  .process-note{align-items:flex-start;flex-direction:column}
-  .section-head{align-items:start;flex-direction:column}
-  .footer-card{align-items:flex-start;flex-direction:column}
-  .footer-brand{align-items:flex-start;flex-direction:column}
-  .floating-cta{left:12px;right:12px}
-}
-</style>
+<link href="styles.css" rel="stylesheet"/>
 </head>
 <body>
 <header>
@@ -148,10 +30,16 @@ footer{padding:30px 0 60px}
 <main>
 <section class="hero">
 <div class="container hero-grid">
-<div>
+<div class="hero-intro">
 <div class="badge">Для селлеров, уставших от условий маркетплейсов</div>
 <h1>Хватит работать на чужих условиях</h1>
 <p class="lead">Я помогаю продавцам уйти от растущих комиссий, штрафов, заморозки выплат и полной зависимости от площадок. Перенесу каталог с Wildberries и других маркетплейсов, помогу запустить собственный интернет-магазин и выстроить прямые продажи клиентам.</p>
+</div>
+<div class="visual-card hero-visual">
+<img alt="Expert Factory — свой канал продаж вместо условий маркетплейсов" data-hero-src="assets/hero-graphic-v2-900.webp" decoding="async" fetchpriority="high" height="1125" loading="eager" sizes="(max-width:760px) calc(100vw - 20px), (max-width:1100px) calc(100vw - 32px), 48vw" src="assets/hero-graphic-v2-preview.webp" width="900"/>
+<div class="visual-caption"><strong>Тимур Наумов</strong><span>Я помогаю перейти от чужой площадки к своему интернет-магазину, своему трафику и своей клиентской базе.</span></div>
+</div>
+<div class="hero-details">
 <div class="feature-grid">
 <div class="feature"><strong>Комиссии и штрафы</strong>
 Разбираю, как перестать отдавать площадкам значительную часть маржи на комиссии, логистику и непредсказуемые удержания.</div>
@@ -168,10 +56,6 @@ footer{padding:30px 0 60px}
 <div class="stat"><strong>с 2007 года</strong><span>я работаю с интернет-торговлей, трафиком и digital-продуктами</span></div>
 <div class="stat"><strong>30 дней</strong><span>ориентир для запуска первой рабочей версии интернет-магазина</span></div>
 </div>
-</div>
-<div class="visual-card">
-<img alt="Expert Factory — свой канал продаж вместо условий маркетплейсов" data-hero-src="assets/hero-graphic-v2-900.webp" decoding="async" fetchpriority="high" height="1125" loading="eager" sizes="(max-width:760px) calc(100vw - 20px), (max-width:1100px) calc(100vw - 32px), 48vw" src="assets/hero-graphic-v2-preview.webp" width="900"/>
-<div class="visual-caption"><strong>Тимур Наумов</strong><span>Я помогаю перейти от чужой площадки к своему интернет-магазину, своему трафику и своей клиентской базе.</span></div>
 </div>
 </div>
 </section>
