@@ -1,10 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Expert Factory — запуск собственного интернет-магазина</title>
-<meta name="description" content="Я помогаю предпринимателям запускать собственные интернет-магазины с помощью Яндекс КИТ, Codex, AI и системного маркетинга.">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Expert Factory — свой канал продаж вместо условий маркетплейсов</title>
+<meta content="Я помогаю селлерам уйти от комиссий, штрафов и зависимости от маркетплейсов, перенести каталог и запустить собственный интернет-магазин." name="description"/>
 <style>
 :root{
   --bg:#f3f8f6;
@@ -82,6 +83,9 @@ section{padding:44px 0}
 .step-num{width:38px;height:38px;border-radius:13px;background:var(--mint-soft);display:grid;place-items:center;color:var(--mint-dark);font-weight:900;margin-bottom:13px}
 .step h3{font-size:18px;margin:0 0 8px}
 .step p{color:var(--muted);font-size:14px;margin:0}
+.process-note{margin-top:18px;padding:20px 22px;background:linear-gradient(135deg,var(--mint-soft),#fff);border:1px solid #ccefe4;border-radius:22px;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:space-between;gap:18px}
+.process-note strong{display:block;font-size:19px;margin-bottom:4px}
+.process-note span{color:var(--muted)}
 .contact{display:grid;grid-template-columns:.95fr 1.05fr;gap:20px;align-items:start}
 .panel{padding:25px;background:#fff;border:1px solid var(--line);border-radius:31px;box-shadow:var(--shadow)}
 .contact-links{display:grid;gap:12px;margin-top:18px}
@@ -93,6 +97,7 @@ label{font-size:14px;color:#31423d}
 input,textarea,select{width:100%;padding:15px 16px;border:1px solid var(--line);border-radius:16px;background:#fcfefd;color:var(--text);font:inherit;outline:none}
 textarea{min-height:120px;resize:vertical}
 .success{display:none;padding:14px 16px;border-radius:16px;background:var(--mint-soft);border:1px solid #c6f1e4;color:var(--mint-dark);font-weight:750}
+.success.error{background:#fff1f1;border-color:#f2c7c7;color:#9d2929}
 footer{padding:30px 0 60px}
 .footer-card{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:22px 25px;background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow)}
 .footer-brand{display:flex;align-items:center;gap:18px}
@@ -112,6 +117,7 @@ footer{padding:30px 0 60px}
   .brand-mark{width:105px}
   .brand-copy span{display:none}
   .feature-grid,.stats,.grid3,.process{grid-template-columns:1fr}
+  .process-note{align-items:flex-start;flex-direction:column}
   .section-head{align-items:start;flex-direction:column}
   .footer-card{align-items:flex-start;flex-direction:column}
   .footer-brand{align-items:flex-start;flex-direction:column}
@@ -121,165 +127,194 @@ footer{padding:30px 0 60px}
 </head>
 <body>
 <header>
-  <div class="container top">
-    <div class="brand">
-      <img class="brand-mark" src="assets/image-69f53ed58031.png" alt="Expert Factory">
-      <div class="brand-copy"><strong>EXPERT FACTORY</strong><span>Я запускаю собственные интернет-магазины и системы онлайн-продаж</span></div>
-    </div>
-    <nav>
-      <a href="#about">Обо мне</a>
-      <a href="#cases">Мои проекты</a>
-      <a href="#process">Как я работаю</a>
-      <a href="#contact">Контакты</a>
-      <a class="btn primary" href="#contact">Обсудить проект</a>
-    </nav>
-  </div>
+<div class="container top">
+<div class="brand">
+<img alt="Expert Factory" class="brand-mark" src="assets/image-69f53ed58031.png"/>
+<div class="brand-copy"><strong>EXPERT FACTORY</strong><span>Я запускаю собственные интернет-магазины и системы онлайн-продаж</span></div>
+</div>
+<nav>
+<a href="#about">Обо мне</a>
+<a href="#cases">Мои проекты</a>
+<a href="#process">Как я работаю</a>
+<a href="#contact">Контакты</a>
+<a class="btn primary" href="#contact">Обсудить проект</a>
+</nav>
+</div>
 </header>
 <main>
 <section class="hero">
-  <div class="container hero-grid">
-    <div>
-      <div class="badge">⚡ Свой интернет-магазин примерно за 30 дней</div>
-      <h1>Я помогаю перейти от зависимости от маркетплейсов к собственному каналу продаж</h1>
-      <p class="lead">Я разрабатываю стратегию, создаю сайт, переношу каталог, выстраиваю визуал, трафик и аналитику. В работе использую Яндекс КИТ, Codex, AI-инструменты и практический опыт в онлайн-бизнесе.</p>
-      <div class="feature-grid">
-        <div class="feature"><strong>Я анализирую вашу ситуацию</strong>Разбираю нишу, ассортимент, текущие продажи и риски зависимости от внешних площадок.</div>
-        <div class="feature"><strong>Я собираю магазин</strong>Прорабатываю структуру, каталог, дизайн, оффер, формы и необходимые интеграции.</div>
-        <div class="feature"><strong>Я выстраиваю продвижение</strong>Подключаю логику контента, Telegram, Instagram, Яндекс Директ и повторные продажи.</div>
-        <div class="feature"><strong>Я передаю вам цифровой актив</strong>Домен, сайт, клиентская база и аналитика остаются под вашим контролем.</div>
-      </div>
-      <div class="actions"><a class="btn primary" href="#contact">Получить консультацию</a><a class="btn secondary" href="#cases">Посмотреть мои проекты</a></div>
-      <div class="stats">
-        <div class="stat"><strong>90 млн ₽</strong><span>оборот одного из созданных мной образовательных проектов в 2024 году</span></div>
-        <div class="stat"><strong>с 2007 года</strong><span>я работаю с интернет-торговлей, трафиком и digital-продуктами</span></div>
-        <div class="stat"><strong>30 дней</strong><span>ориентир для запуска первой рабочей версии интернет-магазина</span></div>
-      </div>
-    </div>
-    <div class="visual-card">
-      <img src="assets/image-c5ce90b87626.jpg" alt="Тимур Наумов — эксперт по онлайн-бизнесу">
-      <div class="visual-caption"><strong>Тимур Наумов</strong><span>Я помогаю предпринимателям запускать интернет-магазины, выстраивать онлайн-продажи и применять AI в реальном бизнесе.</span></div>
-    </div>
-  </div>
+<div class="container hero-grid">
+<div>
+<div class="badge">Для селлеров, уставших от условий маркетплейсов</div>
+<h1>Хватит работать на чужих условиях</h1>
+<p class="lead">Я помогаю продавцам уйти от растущих комиссий, штрафов, заморозки выплат и полной зависимости от площадок. Перенесу каталог с Wildberries и других маркетплейсов, помогу запустить собственный интернет-магазин и выстроить прямые продажи клиентам.</p>
+<div class="feature-grid">
+<div class="feature"><strong>Комиссии и штрафы</strong>
+Разбираю, как перестать отдавать площадкам значительную часть маржи на комиссии, логистику и непредсказуемые удержания.</div>
+<div class="feature"><strong>Деньги и товар под риском</strong>
+Помогаю снизить зависимость от задержек выплат, возвратов, блокировок и одностороннего изменения правил.</div>
+<div class="feature"><strong>Нет прямого клиента</strong>
+Выстраиваю собственный трафик, базу клиентов, аналитику и повторные продажи без запрета на прямую коммуникацию.</div>
+<div class="feature"><strong>Свой магазин — свои правила</strong>
+Запускаю сайт на Яндекс КИТ или с помощью Codex AI, переношу каталог и передаю цифровой актив под ваш контроль.</div>
+</div>
+<div class="actions"><a class="btn primary" href="#contact">Получить консультацию</a><a class="btn secondary" href="#cases">Посмотреть мои проекты</a></div>
+<div class="stats">
+<div class="stat"><strong>90 млн ₽</strong><span>оборот одного из созданных мной образовательных проектов в 2024 году</span></div>
+<div class="stat"><strong>с 2007 года</strong><span>я работаю с интернет-торговлей, трафиком и digital-продуктами</span></div>
+<div class="stat"><strong>30 дней</strong><span>ориентир для запуска первой рабочей версии интернет-магазина</span></div>
+</div>
+</div>
+<div class="visual-card">
+<img alt="Устали от условий маркетплейсов — Тимур Наумов помогает селлерам построить собственный канал продаж" src="assets/image-8aff75a1a8cd.webp"/>
+<div class="visual-caption"><strong>Тимур Наумов</strong><span>Я помогаю перейти от чужой площадки к своему интернет-магазину, своему трафику и своей клиентской базе.</span></div>
+</div>
+</div>
 </section>
 <section id="about">
-  <div class="container">
-    <div class="section-head"><div><div class="pill">Что я решаю</div><h2>Я собираю не просто сайт, а полноценную систему продаж</h2></div><p>Я объединяю стратегию, разработку, визуал, маркетинг и трафик, чтобы интернет-магазин был понятным клиенту и приносил бизнесу долгосрочную пользу.</p></div>
-    <div class="grid3">
-      <div class="card"><div class="icon">🔐</div><h3>Возвращаю контроль</h3><p>Я помогаю создать канал, в котором вы управляете товаром, деньгами, клиентской базой и коммуникацией.</p></div>
-      <div class="card"><div class="icon">📈</div><h3>Выстраиваю экономику</h3><p>Я учитываю маржу, трафик, повторные продажи и способы снизить зависимость от комиссий внешних площадок.</p></div>
-      <div class="card"><div class="icon">🤖</div><h3>Ускоряю работу с AI</h3><p>Я применяю Codex и другие AI-инструменты для разработки, контента, автоматизации и быстрого тестирования решений.</p></div>
-    </div>
-  </div>
+<div class="container">
+<div class="section-head"><div><div class="pill">Что я решаю</div><h2>Я помогаю вам собрать не просто сайт, а полноценную систему продаж</h2></div><p>Я объединяю сайт, трафик, клиентскую базу и аналитику в единую систему, которая работает на ваш бизнес.</p></div>
+<div class="grid3">
+<div class="card"><div class="icon">🔐</div><h3>Помогаю вернуть контроль</h3><p>Выстраиваю ваш собственный трафик, клиентскую базу и прямую коммуникацию.</p></div>
+<div class="card"><div class="icon">📈</div><h3>Выстраиваю экономику</h3><p>Считаю маржу, трафик и повторные продажи, чтобы снизить зависимость от комиссий внешних площадок.</p></div>
+<div class="card"><div class="icon">🤖</div><h3>Учу ускорять процессы с AI</h3><p>Показываю, как использовать Codex и AI для разработки, контента и автоматизации.</p></div>
+</div>
+</div>
 </section>
 <section>
-  <div class="container expert">
-    <div class="expert-image"><img src="assets/image-742e759972c1.jpg" alt="Тимур Наумов проводит стратегический разбор"></div>
-    <div class="card">
-      <div class="pill">Почему мне доверяют</div>
-      <h2 style="font-size:clamp(30px,4vw,47px);line-height:1.02;letter-spacing:-.035em;margin:12px 0 15px">Я сам выстраивал онлайн-бизнесы и понимаю весь путь запуска</h2>
-      <p>Я работаю на стыке предпринимательства, e-commerce, разработки, дизайна, маркетинга, SMM и визуализации. Поэтому я вижу не отдельную страницу сайта, а всю систему: продукт, упаковку, трафик, конверсию и масштабирование.</p>
-      <ul>
-        <li><strong>Первый интернет-магазин я создал в 2007 году.</strong> Уже тогда я запускал собственный трафик и продавал товары в ритейле.</li>
-        <li><strong>Я создавал онлайн-школы и digital-проекты.</strong> Один из проектов в 2024 году достиг оборота около 90 млн ₽.</li>
-        <li><strong>Я работал с приложениями, компьютерными играми и интернет-магазинами.</strong> Это помогает мне понимать техническую сторону запуска.</li>
-        <li><strong>Я самостоятельно занимаюсь упаковкой и визуалом.</strong> Дизайн, реклама, контент и позиционирование собираются в единую систему.</li>
-      </ul>
-      <div class="actions" style="margin-top:20px"><a class="btn primary" href="#contact">Записаться ко мне на разбор</a></div>
-    </div>
-  </div>
+<div class="container expert">
+<div class="expert-image"><img alt="Тимур Наумов проводит стратегический разбор онлайн-бизнеса" src="assets/image-a2a796f64bfa.webp"/></div>
+<div class="card">
+<div class="pill">Почему мне доверяют</div>
+<h2 style="font-size:clamp(30px,4vw,47px);line-height:1.02;letter-spacing:-.035em;margin:12px 0 15px">Я выстроил много онлайн-бизнесов и глубоко понимаю интернет-маркетинг и запуск онлайн-продаж</h2>
+<p>Я работаю на стыке предпринимательства, e-commerce, разработки, дизайна, маркетинга и SMM. Поэтому вижу не отдельную страницу сайта, а весь путь: продукт, трафик, конверсию и масштабирование.</p>
+<ul>
+<li><strong>Первый интернет-магазин я создал в 2007 году.</strong> Уже тогда я запускал собственный трафик и продавал товары в ритейле.</li>
+<li><strong>Я создавал онлайн-школы и программировал обучающие платформы.</strong> Один из проектов в 2024 году достиг оборота около 90 млн ₽.</li>
+<li><strong>Я разрабатывал приложения, компьютерные игры, интернет-магазины и собственные сайты.</strong> Поэтому глубоко понимаю техническую сторону запуска.</li>
+<li><strong>Я создавал интеграции для интернет-магазинов и сам собирал упаковку, визуал, рекламу и контент.</strong> Все элементы объединяю в одну систему продаж.</li>
+</ul>
+<div class="actions" style="margin-top:20px"><a class="btn primary" href="#contact">Записаться ко мне на разбор</a></div>
+</div>
+</div>
 </section>
 <section id="cases">
-  <div class="container">
-    <div class="section-head"><div><div class="pill">Мои проекты и каналы</div><h2>Примеры моей работы</h2></div><p>Нажмите на нужную карточку, чтобы открыть проект, видео или социальную сеть.</p></div>
-    <div class="cases">
-      <a class="case" href="https://piazzaroma.ru/" target="_blank" rel="noopener">
-        <img src="assets/image-2aa72eb79992.jpg" alt="PIAZZA ROMA">
-        <div class="case-body"><div class="case-tag">Я реализовал на Яндекс КИТ</div><div class="case-title">PIAZZA ROMA</div><div class="case-link">Открыть мой проект ↗</div></div>
-      </a>
-      <a class="case" href="https://www.catorella.shop/" target="_blank" rel="noopener">
-        <img src="assets/image-4105877892d0.jpg" alt="Catorella Shop">
-        <div class="case-body"><div class="case-tag">Я запрограммировал через Codex + AI</div><div class="case-title">Catorella Shop</div><div class="case-link">Открыть мой проект ↗</div></div>
-      </a>
-      <a class="case" href="https://rutube.ru/video/0e841e8b43f56aef24190c836312f5c8/" target="_blank" rel="noopener">
-        <img src="assets/image-b7d3edfe3d44.jpg" alt="Видео Тимура на Rutube">
-        <div class="case-body"><div class="case-tag">Мои видео</div><div class="case-title">Rutube</div><div class="case-link">Смотреть моё видео ↗</div></div>
-      </a>
-      <a class="case" href="https://www.instagram.com/expert_factory/" target="_blank" rel="noopener">
-        <img src="assets/image-8a357e61a06b.jpg" alt="Instagram Expert Factory">
-        <div class="case-body"><div class="case-tag">Мой контент</div><div class="case-title">Instagram Expert Factory</div><div class="case-link">Перейти в мой Instagram ↗</div></div>
-      </a>
-      <a class="case" href="https://t.me/naumov_universe/494" target="_blank" rel="noopener">
-        <img src="assets/image-d2cea0d5014d.jpg" alt="Telegram Тимура Наумова">
-        <div class="case-body"><div class="case-tag">Мой канал</div><div class="case-title">Telegram</div><div class="case-link">Открыть мой Telegram ↗</div></div>
-      </a>
-    </div>
-  </div>
+<div class="container">
+<div class="section-head"><div><div class="pill">Мои проекты и каналы</div><h2>Примеры моей работы</h2></div><p>Нажмите на нужную карточку, чтобы открыть проект, видео или социальную сеть.</p></div>
+<div class="cases">
+<a class="case" href="https://piazzaroma.ru/" rel="noopener" target="_blank">
+<img alt="PIAZZA ROMA" src="assets/image-2aa72eb79992.jpg"/>
+<div class="case-body"><div class="case-tag">Я реализовал на Яндекс КИТ</div><div class="case-title">PIAZZA ROMA</div><div class="case-link">Открыть мой проект ↗</div></div>
+</a>
+<a class="case" href="https://www.catorella.shop/" rel="noopener" target="_blank">
+<img alt="Catorella Shop" src="assets/image-4105877892d0.jpg"/>
+<div class="case-body"><div class="case-tag">Я запрограммировал через Codex + AI</div><div class="case-title">Catorella Shop</div><div class="case-link">Открыть мой проект ↗</div></div>
+</a>
+<a class="case" href="https://rutube.ru/video/0e841e8b43f56aef24190c836312f5c8/" rel="noopener" target="_blank">
+<img alt="Видео Тимура на Rutube" src="assets/image-b7d3edfe3d44.jpg"/>
+<div class="case-body"><div class="case-tag">Мои видео</div><div class="case-title">Rutube</div><div class="case-link">Смотреть моё видео ↗</div></div>
+</a>
+<a class="case" href="https://www.instagram.com/expert_factory/" rel="noopener" target="_blank">
+<img alt="Instagram Expert Factory" src="assets/image-8a357e61a06b.jpg"/>
+<div class="case-body"><div class="case-tag">Мой контент</div><div class="case-title">Instagram Expert Factory</div><div class="case-link">Перейти в мой Instagram ↗</div></div>
+</a>
+<a class="case" href="https://t.me/naumov_universe/494" rel="noopener" target="_blank">
+<img alt="Telegram Тимура Наумова" src="assets/image-d2cea0d5014d.jpg"/>
+<div class="case-body"><div class="case-tag">Мой канал</div><div class="case-title">Telegram</div><div class="case-link">Открыть мой Telegram ↗</div></div>
+</a>
+</div>
+</div>
 </section>
 <section id="process">
-  <div class="container">
-    <div class="section-head"><div><div class="pill">Как я работаю</div><h2>Пять шагов до собственного интернет-магазина</h2></div><p>Я двигаюсь от анализа к запуску, чтобы каждый этап был связан с задачами бизнеса и будущими продажами.</p></div>
-    <div class="process">
-      <div class="step"><div class="step-num">1</div><h3>Провожу диагностику</h3><p>Я разбираю нишу, ассортимент, текущие каналы и главные риски.</p></div>
-      <div class="step"><div class="step-num">2</div><h3>Выбираю решение</h3><p>Я определяю платформу, структуру и способ переноса каталога.</p></div>
-      <div class="step"><div class="step-num">3</div><h3>Собираю магазин</h3><p>Я создаю страницы, каталог, дизайн, формы и интеграции.</p></div>
-      <div class="step"><div class="step-num">4</div><h3>Упаковываю предложение</h3><p>Я прорабатываю оффер, контент, кейсы и доверительные блоки.</p></div>
-      <div class="step"><div class="step-num">5</div><h3>Готовлю запуск</h3><p>Я подключаю трафик, соцсети, аналитику и дальнейший план роста.</p></div>
-    </div>
-  </div>
+<div class="container">
+<div class="section-head"><div><div class="pill">Как я работаю</div><h2>Пять этапов работы со мной</h2></div><p>Сначала я бесплатно разбираю вашу ситуацию. Дальше вы подключаете только нужные этапы и оплачиваете их по мере движения.</p></div>
+<div class="process">
+<div class="step"><div class="step-num">1</div><h3>Бесплатная диагностика</h3><p>За 30 минут в Telemost, по телефону или в мессенджере я разбираю вашу ситуацию, потери, бюджет и срочные задачи.</p></div>
+<div class="step"><div class="step-num">2</div><h3>Roadmap проекта</h3><p>Если решаем работать дальше, я фиксирую задачи, приоритеты, сроки и пошаговый план запуска.</p></div>
+<div class="step"><div class="step-num">3</div><h3>Быстрый запуск магазина</h3><p>Помогаю создать сайт через AI, перенести каталог, собрать дизайн и подобрать подрядчиков без лишней переплаты.</p></div>
+<div class="step"><div class="step-num">4</div><h3>Сопровождение проекта</h3><p>Если нужна помощь после сборки, я координирую задачи, подрядчиков и довожу проект до готовности.</p></div>
+<div class="step"><div class="step-num">5</div><h3>Запуск трафика</h3><p>Я контролирую рекламу, аналитику и первые результаты, затем формирую план дальнейшего роста.</p></div>
+</div>
+<div class="process-note">
+<div><strong>Диагностика — бесплатно</strong><span>Остальные этапы можно оплачивать отдельно по мере готовности или объединить в один пакет. Вы не обязаны оплачивать весь проект сразу.</span></div>
+<a class="btn primary" href="#contact">Записаться на диагностику</a>
+</div>
+</div>
 </section>
 <section id="contact">
-  <div class="container contact">
-    <div class="panel">
-      <div class="pill">Связаться со мной</div>
-      <h2 style="font-size:clamp(31px,4vw,46px);line-height:1.03;letter-spacing:-.035em;margin:12px 0 11px">Обсудим ваш интернет-магазин</h2>
-      <p style="color:var(--muted);margin:0">Напишите, что вы продаёте и какая задача сейчас самая важная. Я изучу вводные и предложу понятный следующий шаг.</p>
-      <div class="contact-links">
-        <a class="contact-link" href="https://www.instagram.com/expert_factory/" target="_blank" rel="noopener"><div><strong>Мой Instagram</strong><span>Контент, кейсы и экспертная подача</span></div><div>↗</div></a>
-        <a class="contact-link" href="https://t.me/naumov_universe/494" target="_blank" rel="noopener"><div><strong>Мой Telegram</strong><span>Посты и материалы об онлайн-бизнесе</span></div><div>↗</div></a>
-        <a class="contact-link" href="https://rutube.ru/video/0e841e8b43f56aef24190c836312f5c8/" target="_blank" rel="noopener"><div><strong>Мой Rutube</strong><span>Видео и экспертные разборы</span></div><div>↗</div></a>
-      </div>
-    </div>
-    <div class="panel">
-      <div class="pill">Заявка на консультацию</div>
-      <h3 style="font-size:28px;margin:14px 0 13px">Расскажите мне о вашей задаче</h3>
-      <form id="leadForm">
-        <div class="field"><label for="name">Ваше имя</label><input id="name" name="name" placeholder="Как к вам обращаться" required></div>
-        <div class="field"><label for="contactMethod">Телефон / Telegram / WhatsApp</label><input id="contactMethod" name="contactMethod" placeholder="Например: @username или +7..." required></div>
-        <div class="field"><label for="niche">Ваша ниша</label><input id="niche" name="niche" placeholder="Одежда, товары для дома, онлайн-школа и т. д."></div>
-        <div class="field"><label for="goal">Что вам нужно</label><select id="goal" name="goal"><option>Консультация и стратегия</option><option>Запуск собственного интернет-магазина</option><option>Перенос каталога</option><option>Трафик и продвижение</option><option>Диверсификация от маркетплейсов</option></select></div>
-        <div class="field"><label for="comment">Комментарий</label><textarea id="comment" name="comment" placeholder="Коротко опишите вашу ситуацию и желаемый результат"></textarea></div>
-        <div class="actions"><button class="btn primary" type="submit">Подготовить заявку</button><a class="btn secondary" href="https://t.me/naumov_universe/494" target="_blank" rel="noopener">Открыть мой Telegram</a></div>
-        <div class="success" id="successMessage">Заявка подготовлена и скопирована. Теперь её можно отправить мне в Telegram.</div>
-      </form>
-    </div>
-  </div>
+<div class="container contact">
+<div class="panel">
+<div class="pill">Связаться со мной</div>
+<h2 style="font-size:clamp(31px,4vw,46px);line-height:1.03;letter-spacing:-.035em;margin:12px 0 11px">Обсудим ваш интернет-магазин</h2>
+<p style="color:var(--muted);margin:0">Напишите, что вы продаёте и какая задача сейчас самая важная. Я изучу вводные и предложу понятный следующий шаг.</p>
+<div class="contact-links">
+<a class="contact-link" href="https://www.instagram.com/expert_factory/" rel="noopener" target="_blank"><div><strong>Мой Instagram</strong><span>Контент, кейсы и экспертная подача</span></div><div>↗</div></a>
+<a class="contact-link" href="https://t.me/naumov_universe/494" rel="noopener" target="_blank"><div><strong>Мой Telegram</strong><span>Посты и материалы об онлайн-бизнесе</span></div><div>↗</div></a>
+<a class="contact-link" href="https://rutube.ru/video/0e841e8b43f56aef24190c836312f5c8/" rel="noopener" target="_blank"><div><strong>Мой Rutube</strong><span>Видео и экспертные разборы</span></div><div>↗</div></a>
+</div>
+</div>
+<div class="panel">
+<div class="pill">Бесплатная консультация</div>
+<h3 style="font-size:28px;margin:14px 0 13px">Запишитесь на бесплатную консультацию</h3>
+<form id="leadForm">
+<div class="field"><label for="name">Ваше имя</label><input id="name" name="name" placeholder="Как к вам обращаться" required=""/></div>
+<div class="field"><label for="phone">Телефон</label><input autocomplete="tel" id="phone" name="phone" placeholder="Например: +7 999 123-45-67" required="" type="tel"/></div>
+<div class="field"><label for="telegram">Telegram</label><input autocomplete="off" id="telegram" name="telegram" placeholder="Например: @username" required=""/></div>
+<div class="field"><label for="niche">Ваша ниша</label><input id="niche" name="niche" placeholder="Одежда, товары для дома, онлайн-школа и т. д." required=""/></div>
+<div class="field"><label for="comment">Комментарий</label><textarea id="comment" name="comment" placeholder="Коротко опишите вашу ситуацию и желаемый результат" required=""></textarea></div>
+<div class="actions"><button class="btn primary" type="submit">Отправить заявку</button><a class="btn secondary" href="https://t.me/naumov_universe/494" rel="noopener" target="_blank">Открыть мой Telegram</a></div>
+<div class="success" id="successMessage" role="status">Спасибо! Ваша заявка отправлена. Я свяжусь с вами.</div>
+<div class="success error" id="errorMessage" role="alert">Не удалось отправить заявку. Проверьте интернет и попробуйте ещё раз.</div>
+</form>
+</div>
+</div>
 </section>
 </main>
 <footer>
-  <div class="container footer-card">
-    <div class="footer-brand"><img src="assets/image-69f53ed58031.png" alt="Expert Factory"><div><strong>EXPERT FACTORY</strong><p>Я помогаю создавать собственные интернет-магазины и независимые системы онлайн-продаж.</p></div></div>
-    <div class="quick"><a href="https://piazzaroma.ru/" target="_blank">PIAZZA ROMA</a><a href="https://www.catorella.shop/" target="_blank">Catorella Shop</a><a href="https://www.instagram.com/expert_factory/" target="_blank">Instagram</a><a href="https://t.me/naumov_universe/494" target="_blank">Telegram</a></div>
-  </div>
+<div class="container footer-card">
+<div class="footer-brand"><img alt="Expert Factory" src="assets/image-69f53ed58031.png"/><div><strong>EXPERT FACTORY</strong><p>Я помогаю создавать собственные интернет-магазины и независимые системы онлайн-продаж.</p></div></div>
+<div class="quick"><a href="https://piazzaroma.ru/" target="_blank">PIAZZA ROMA</a><a href="https://www.catorella.shop/" target="_blank">Catorella Shop</a><a href="https://www.instagram.com/expert_factory/" target="_blank">Instagram</a><a href="https://t.me/naumov_universe/494" target="_blank">Telegram</a></div>
+</div>
 </footer>
 <a class="btn primary floating-cta" href="#contact">Обсудить проект ↗</a>
 <script>
+const FORM_ENDPOINT='https://script.google.com/macros/s/AKfycbwVX-sa3f8fvFoykH1jYpBAWKUeluK5J9TXHwHgmL0BdFZDMdz4NMneoTn54w6-a-L4/exec';
 const form=document.getElementById('leadForm');
 const success=document.getElementById('successMessage');
+const errorMessage=document.getElementById('errorMessage');
+const submitButton=form.querySelector('button[type="submit"]');
 form.addEventListener('submit',async(e)=>{
   e.preventDefault();
-  const data={name:form.name.value.trim(),contact:form.contactMethod.value.trim(),niche:form.niche.value.trim(),goal:form.goal.value,comment:form.comment.value.trim(),date:new Date().toISOString()};
-  if(!data.name||!data.contact){alert('Заполните имя и контакт');return;}
-  const leads=JSON.parse(localStorage.getItem('expertFactoryLeads')||'[]');
-  leads.push(data);localStorage.setItem('expertFactoryLeads',JSON.stringify(leads));
-  const text=`Здравствуйте, Тимур!
-
-Меня зовут: ${data.name}
-Контакт: ${data.contact}
-Ниша: ${data.niche||'не указана'}
-Задача: ${data.goal}
-Комментарий: ${data.comment||'нет'}`;
-  try{if(navigator.clipboard)await navigator.clipboard.writeText(text)}catch(err){}
-  form.reset();success.style.display='block';success.scrollIntoView({behavior:'smooth',block:'center'});
+  if(!form.reportValidity())return;
+  const data={
+    name:form.name.value.trim(),
+    phone:form.phone.value.trim(),
+    telegram:form.telegram.value.trim(),
+    niche:form.niche.value.trim(),
+    comment:form.comment.value.trim(),
+    page:window.location.href
+  };
+  success.style.display='none';
+  errorMessage.style.display='none';
+  submitButton.disabled=true;
+  submitButton.textContent='Отправляю…';
+  try{
+    await fetch(FORM_ENDPOINT,{
+      method:'POST',
+      mode:'no-cors',
+      headers:{'Content-Type':'text/plain;charset=utf-8'},
+      body:JSON.stringify(data)
+    });
+    form.reset();
+    success.style.display='block';
+    success.scrollIntoView({behavior:'smooth',block:'center'});
+  }catch(error){
+    errorMessage.style.display='block';
+    errorMessage.scrollIntoView({behavior:'smooth',block:'center'});
+  }finally{
+    submitButton.disabled=false;
+    submitButton.textContent='Отправить заявку';
+  }
 });
 </script>
 </body>
