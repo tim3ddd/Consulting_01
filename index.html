@@ -282,10 +282,18 @@ footer{padding:30px 0 60px}
 <script>
 const heroImage=document.querySelector('[data-hero-src]');
 const loadHeroImage=()=>{
-  if(!heroImage||heroImage.dataset.loaded)return;
-  heroImage.dataset.loaded='true';
-  if(heroImage.dataset.heroSrcset)heroImage.srcset=heroImage.dataset.heroSrcset;
-  heroImage.src=heroImage.dataset.heroSrc;
+  if(!heroImage||heroImage.dataset.upgradeState)return;
+  heroImage.dataset.upgradeState='loading';
+  const upgradedHero=new Image();
+  upgradedHero.decoding='async';
+  upgradedHero.onload=()=>{
+    heroImage.src=upgradedHero.src;
+    heroImage.dataset.upgradeState='ready';
+  };
+  upgradedHero.onerror=()=>{
+    delete heroImage.dataset.upgradeState;
+  };
+  upgradedHero.src=heroImage.dataset.heroSrc;
 };
 if(window.matchMedia('(min-width:1101px)').matches){
   requestAnimationFrame(()=>requestAnimationFrame(()=>setTimeout(loadHeroImage,1200)));
@@ -301,10 +309,18 @@ if(window.matchMedia('(min-width:1101px)').matches){
   loadHeroImage();
 }
 const loadDeferredImage=(image)=>{
-  if(image.dataset.loaded)return;
-  image.dataset.loaded='true';
-  if(image.dataset.deferSrcset)image.srcset=image.dataset.deferSrcset;
-  image.src=image.dataset.deferSrc;
+  if(image.dataset.upgradeState)return;
+  image.dataset.upgradeState='loading';
+  const upgradedImage=new Image();
+  upgradedImage.decoding='async';
+  upgradedImage.onload=()=>{
+    image.src=upgradedImage.src;
+    image.dataset.upgradeState='ready';
+  };
+  upgradedImage.onerror=()=>{
+    delete image.dataset.upgradeState;
+  };
+  upgradedImage.src=image.dataset.deferSrc;
 };
 const deferredImages=[...document.querySelectorAll('[data-defer-src]')];
 if('IntersectionObserver' in window){
