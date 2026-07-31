@@ -7,7 +7,6 @@
 <title>Expert Factory — свой канал продаж вместо условий маркетплейсов</title>
 <meta content="Я помогаю селлерам уйти от комиссий, штрафов и зависимости от маркетплейсов, перенести каталог и запустить собственный интернет-магазин." name="description"/>
 <link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2313201d'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-family='Arial' font-size='24' font-weight='700' fill='%2343cfaa'%3EEF%3C/text%3E%3C/svg%3E" rel="icon"/>
-<link as="image" fetchpriority="high" href="assets/hero-graphic-v2-900.webp" imagesizes="48vw" imagesrcset="assets/hero-graphic-v2-480.webp 480w, assets/hero-graphic-v2-900.webp 900w" media="(min-width:1101px)" rel="preload" type="image/webp"/>
 <style>
 :root{
   --bg:#f3f8f6;
@@ -132,7 +131,7 @@ footer{padding:30px 0 60px}
 <header>
 <div class="container top">
 <div class="brand">
-<img alt="Expert Factory" class="brand-mark" height="68" src="assets/expert-factory-logo.webp" width="138"/>
+<img alt="Expert Factory" class="brand-mark" data-after-text-src="assets/expert-factory-logo.webp" height="68" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" width="138"/>
 <div class="brand-copy"><strong>EXPERT FACTORY</strong><span>Я запускаю собственные интернет-магазины и системы онлайн-продаж</span></div>
 </div>
 <nav>
@@ -169,7 +168,7 @@ footer{padding:30px 0 60px}
 </div>
 </div>
 <div class="visual-card">
-<img alt="Expert Factory — свой канал продаж вместо условий маркетплейсов" data-hero-src="assets/hero-graphic-v2-480.webp" data-hero-srcset="assets/hero-graphic-v2-480.webp 480w, assets/hero-graphic-v2-900.webp 900w" decoding="async" fetchpriority="high" height="1125" sizes="(max-width:760px) calc(100vw - 20px), (max-width:1100px) calc(100vw - 32px), 48vw" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" width="900"/>
+<img alt="Expert Factory — свой канал продаж вместо условий маркетплейсов" data-hero-src="assets/hero-graphic-v2-480.webp" data-hero-srcset="assets/hero-graphic-v2-480.webp 480w, assets/hero-graphic-v2-900.webp 900w" decoding="async" height="1125" sizes="(max-width:760px) calc(100vw - 20px), (max-width:1100px) calc(100vw - 32px), 48vw" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" width="900"/>
 <div class="visual-caption"><strong>Тимур Наумов</strong><span>Я помогаю перейти от чужой площадки к своему интернет-магазину, своему трафику и своей клиентской базе.</span></div>
 </div>
 </div>
@@ -288,8 +287,19 @@ const loadHeroImage=()=>{
   heroImage.srcset=heroImage.dataset.heroSrcset;
   heroImage.src=heroImage.dataset.heroSrc;
 };
+requestAnimationFrame(()=>requestAnimationFrame(()=>{
+  document.querySelectorAll('[data-after-text-src]').forEach((image)=>{
+    image.src=image.dataset.afterTextSrc;
+  });
+}));
 if(window.matchMedia('(min-width:1101px)').matches){
-  loadHeroImage();
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{
+    if('requestIdleCallback' in window){
+      requestIdleCallback(loadHeroImage,{timeout:700});
+    }else{
+      setTimeout(loadHeroImage,0);
+    }
+  }));
 }else if('IntersectionObserver' in window){
   const heroObserver=new IntersectionObserver((entries)=>{
     if(entries.some((entry)=>entry.isIntersecting)){
