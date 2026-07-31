@@ -40,24 +40,27 @@ nav>a:hover{color:var(--text)}
 .btn.secondary{background:#fff;border:1px solid var(--line);box-shadow:var(--shadow)}
 .btn:hover{transform:translateY(-2px)}
 .hero{padding:50px 0 24px}
-.hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:30px;align-items:center}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.04fr) minmax(380px,.96fr);grid-template-areas:"copy visual" "details visual";gap:24px 30px;align-items:start}
+.hero-copy{grid-area:copy}
+.hero-details{grid-area:details}
 .badge,.pill,.case-tag{display:inline-flex;align-items:center;width:max-content;padding:9px 13px;border-radius:999px;background:var(--mint-soft);color:var(--mint-dark);font-weight:800;font-size:13px}
 h1{font-size:clamp(38px,6vw,70px);line-height:.98;letter-spacing:-.045em;margin:18px 0}
 .lead{font-size:clamp(17px,2vw,20px);color:var(--muted);margin:0 0 22px;max-width:750px}
-.feature-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:24px 0 28px}
+.feature-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:0 0 24px}
 .feature{padding:17px;background:rgba(255,255,255,.84);border:1px solid var(--line);border-radius:19px;box-shadow:var(--shadow)}
 .feature strong{display:block;margin-bottom:5px}
 .actions{display:flex;flex-wrap:wrap;gap:13px}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:23px}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:18px}
 .stat{padding:20px;background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow)}
 .stat strong{display:block;font-size:29px;line-height:1;color:var(--mint-dark);margin-bottom:8px}
 .stat span{color:var(--muted);font-size:14px}
-.visual-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:34px;overflow:hidden;box-shadow:var(--shadow)}
-.visual-card>img{width:100%;height:auto}
+.visual-card{grid-area:visual;position:relative;align-self:stretch;background:#fff;border:1px solid var(--line);border-radius:34px;overflow:hidden;box-shadow:var(--shadow)}
+.visual-card>picture{display:block;height:100%}
+.visual-card>picture>img{width:100%;height:100%;min-height:680px;aspect-ratio:3/4;object-fit:cover;object-position:center top}
 .visual-caption{position:absolute;left:18px;right:18px;bottom:18px;padding:16px 18px;background:rgba(255,255,255,.91);backdrop-filter:blur(12px);border:1px solid rgba(19,32,29,.08);border-radius:20px}
 .visual-caption strong{display:block;font-size:21px;margin-bottom:5px}
 .visual-caption span{color:var(--muted)}
-section{padding:44px 0}
+section{padding:44px 0;scroll-margin-top:86px}
 .section-head{display:flex;justify-content:space-between;align-items:end;gap:22px;margin-bottom:24px}
 .section-head h2{font-size:clamp(30px,4vw,48px);line-height:1.02;letter-spacing:-.035em;margin:10px 0 0}
 .section-head p{max-width:650px;color:var(--muted);margin:0}
@@ -68,13 +71,15 @@ section{padding:44px 0}
 .card p{margin:0;color:var(--muted)}
 .expert{display:grid;grid-template-columns:.92fr 1.08fr;gap:24px;align-items:center}
 .expert-image{background:#fff;border:1px solid var(--line);border-radius:31px;overflow:hidden;box-shadow:var(--shadow)}
-.expert-image img{width:100%}
+.expert-image picture{display:block}
+.expert-image img{width:100%;aspect-ratio:2/3;object-fit:cover;object-position:center top}
 .expert ul{margin:18px 0 0;padding-left:20px}
 .expert li{margin-bottom:11px;color:#2b3c37}
 .cases{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:21px}
 .case{background:#fff;border:1px solid var(--line);border-radius:30px;overflow:hidden;box-shadow:var(--shadow);transition:.2s ease}
 .case:hover{transform:translateY(-4px)}
-.case img{width:100%;aspect-ratio:4/3;object-fit:cover;background:#eef3f1}
+.case picture{display:block}
+.case img{width:100%;aspect-ratio:3/2;object-fit:cover;background:#eef3f1}
 .case-body{padding:20px 20px 22px}
 .case-title{font-size:29px;font-weight:880;letter-spacing:-.02em;margin:12px 0 17px;line-height:1.05}
 .case-link{display:inline-flex;align-items:center;gap:8px;color:var(--mint-dark);font-weight:850}
@@ -106,7 +111,9 @@ footer{padding:30px 0 60px}
 .quick{display:flex;gap:14px;flex-wrap:wrap;font-weight:700;color:var(--muted)}
 .floating-cta{position:fixed;right:18px;bottom:18px;z-index:40}
 @media(max-width:1100px){
-  .hero-grid,.expert,.contact{grid-template-columns:1fr}
+  .hero-grid{grid-template-columns:1fr;grid-template-areas:"copy" "visual" "details"}
+  .expert,.contact{grid-template-columns:1fr}
+  .visual-card>picture>img{min-height:0;max-height:760px}
   .grid3{grid-template-columns:repeat(2,minmax(0,1fr))}
   .cases{grid-template-columns:1fr}
   .process{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -114,22 +121,48 @@ footer{padding:30px 0 60px}
 }
 @media(max-width:760px){
   .container{width:min(var(--container),calc(100% - 20px))}
+  .hero{padding:28px 0 10px}
+  h1{font-size:clamp(36px,11vw,52px);line-height:1;margin:15px 0}
+  .lead{font-size:17px;line-height:1.48;margin-bottom:18px}
   .brand-mark{width:105px}
   .brand-copy span{display:none}
+  .hero-grid{gap:18px}
+  .visual-card{border-radius:25px}
+  .visual-card>picture>img{max-height:none;aspect-ratio:3/4;object-position:center top}
+  .visual-caption{position:static;padding:15px 16px;background:#fff;border:0;border-top:1px solid var(--line);border-radius:0}
+  .visual-caption strong{font-size:19px}
   .feature-grid,.stats,.grid3,.process{grid-template-columns:1fr}
+  .feature-grid{gap:10px;margin-bottom:18px}
+  .feature{padding:15px;border-radius:17px}
+  .stats{gap:10px}
+  .stat{padding:17px;border-radius:18px}
+  .actions{display:grid;grid-template-columns:1fr;width:100%}
+  .actions .btn{width:100%}
+  section{padding:34px 0;scroll-margin-top:72px}
+  .section-head{margin-bottom:18px}
+  .section-head h2{font-size:clamp(29px,9vw,39px)}
+  .card{padding:19px;border-radius:23px}
+  .expert{gap:16px}
+  .expert-image{border-radius:24px}
+  .expert-image img{aspect-ratio:4/5}
+  .case{border-radius:23px}
+  .case-body{padding:17px 17px 19px}
+  .case-title{font-size:25px;margin:10px 0 14px}
+  input,textarea,select{font-size:16px}
   .process-note{align-items:flex-start;flex-direction:column}
   .section-head{align-items:start;flex-direction:column}
   .footer-card{align-items:flex-start;flex-direction:column}
   .footer-brand{align-items:flex-start;flex-direction:column}
-  .floating-cta{left:12px;right:12px}
+  .floating-cta{display:none}
 }
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.case{transition:none}}
 </style>
 </head>
 <body>
 <header>
 <div class="container top">
 <div class="brand">
-<img alt="Expert Factory" class="brand-mark" src="assets/image-69f53ed58031.png"/>
+<img alt="Expert Factory" class="brand-mark" height="68" src="assets/expert-factory-logo.webp" width="138"/>
 <div class="brand-copy"><strong>EXPERT FACTORY</strong><span>Я запускаю собственные интернет-магазины и системы онлайн-продаж</span></div>
 </div>
 <nav>
@@ -144,10 +177,19 @@ footer{padding:30px 0 60px}
 <main>
 <section class="hero">
 <div class="container hero-grid">
-<div>
+<div class="hero-copy">
 <div class="badge">Для селлеров, уставших от условий маркетплейсов</div>
 <h1>Хватит работать на чужих условиях</h1>
 <p class="lead">Я помогаю продавцам уйти от растущих комиссий, штрафов, заморозки выплат и полной зависимости от площадок. Перенесу каталог с Wildberries и других маркетплейсов, помогу запустить собственный интернет-магазин и выстроить прямые продажи клиентам.</p>
+</div>
+<div class="visual-card">
+<picture>
+<source media="(max-width: 760px)" srcset="assets/hero-clean-480.webp"/>
+<img alt="Тимур Наумов в светлом рабочем пространстве" decoding="async" fetchpriority="high" height="1200" src="assets/hero-clean-900.webp" width="900"/>
+</picture>
+<div class="visual-caption"><strong>Тимур Наумов</strong><span>Я помогаю перейти от чужой площадки к своему интернет-магазину, своему трафику и своей клиентской базе.</span></div>
+</div>
+<div class="hero-details">
 <div class="feature-grid">
 <div class="feature"><strong>Комиссии и штрафы</strong>
 Разбираю, как перестать отдавать площадкам значительную часть маржи на комиссии, логистику и непредсказуемые удержания.</div>
@@ -165,10 +207,6 @@ footer{padding:30px 0 60px}
 <div class="stat"><strong>30 дней</strong><span>ориентир для запуска первой рабочей версии интернет-магазина</span></div>
 </div>
 </div>
-<div class="visual-card">
-<img alt="Устали от условий маркетплейсов — Тимур Наумов помогает селлерам построить собственный канал продаж" src="assets/image-8aff75a1a8cd.webp"/>
-<div class="visual-caption"><strong>Тимур Наумов</strong><span>Я помогаю перейти от чужой площадки к своему интернет-магазину, своему трафику и своей клиентской базе.</span></div>
-</div>
 </div>
 </section>
 <section id="about">
@@ -183,7 +221,7 @@ footer{padding:30px 0 60px}
 </section>
 <section>
 <div class="container expert">
-<div class="expert-image"><img alt="Тимур Наумов проводит стратегический разбор онлайн-бизнеса" src="assets/image-a2a796f64bfa.webp"/></div>
+<div class="expert-image"><picture><source media="(max-width: 760px)" srcset="assets/expert-clean-480.webp"/><img alt="Тимур Наумов с планшетом в рабочем кабинете" decoding="async" height="1200" loading="lazy" src="assets/expert-clean-800.webp" width="800"/></picture></div>
 <div class="card">
 <div class="pill">Почему мне доверяют</div>
 <h2 style="font-size:clamp(30px,4vw,47px);line-height:1.02;letter-spacing:-.035em;margin:12px 0 15px">Я выстроил много онлайн-бизнесов и глубоко понимаю интернет-маркетинг и запуск онлайн-продаж</h2>
@@ -203,23 +241,23 @@ footer{padding:30px 0 60px}
 <div class="section-head"><div><div class="pill">Мои проекты и каналы</div><h2>Примеры моей работы</h2></div><p>Нажмите на нужную карточку, чтобы открыть проект, видео или социальную сеть.</p></div>
 <div class="cases">
 <a class="case" href="https://piazzaroma.ru/" rel="noopener" target="_blank">
-<img alt="PIAZZA ROMA" src="assets/image-2aa72eb79992.jpg"/>
+<picture><source media="(max-width: 760px)" srcset="assets/case-piazza-480.webp"/><img alt="Рабочее место интернет-магазина модной одежды" decoding="async" height="600" loading="lazy" src="assets/case-piazza-900.webp" width="900"/></picture>
 <div class="case-body"><div class="case-tag">Я реализовал на Яндекс КИТ</div><div class="case-title">PIAZZA ROMA</div><div class="case-link">Открыть мой проект ↗</div></div>
 </a>
 <a class="case" href="https://www.catorella.shop/" rel="noopener" target="_blank">
-<img alt="Catorella Shop" src="assets/image-4105877892d0.jpg"/>
+<picture><source media="(max-width: 760px)" srcset="assets/case-catorella-480.webp"/><img alt="Одежда и интерфейсы современного интернет-магазина" decoding="async" height="600" loading="lazy" src="assets/case-catorella-900.webp" width="900"/></picture>
 <div class="case-body"><div class="case-tag">Я запрограммировал через Codex + AI</div><div class="case-title">Catorella Shop</div><div class="case-link">Открыть мой проект ↗</div></div>
 </a>
 <a class="case" href="https://rutube.ru/video/0e841e8b43f56aef24190c836312f5c8/" rel="noopener" target="_blank">
-<img alt="Видео Тимура на Rutube" src="assets/image-b7d3edfe3d44.jpg"/>
+<picture><source media="(max-width: 760px)" srcset="assets/case-rutube-480.webp"/><img alt="Камера и микрофон в студии для записи видео" decoding="async" height="600" loading="lazy" src="assets/case-rutube-900.webp" width="900"/></picture>
 <div class="case-body"><div class="case-tag">Мои видео</div><div class="case-title">Rutube</div><div class="case-link">Смотреть моё видео ↗</div></div>
 </a>
 <a class="case" href="https://www.instagram.com/expert_factory/" rel="noopener" target="_blank">
-<img alt="Instagram Expert Factory" src="assets/image-8a357e61a06b.jpg"/>
+<picture><source media="(max-width: 760px)" srcset="assets/case-instagram-480.webp"/><img alt="Смартфон, камера и кольцевая лампа для создания контента" decoding="async" height="600" loading="lazy" src="assets/case-instagram-900.webp" width="900"/></picture>
 <div class="case-body"><div class="case-tag">Мой контент</div><div class="case-title">Instagram Expert Factory</div><div class="case-link">Перейти в мой Instagram ↗</div></div>
 </a>
 <a class="case" href="https://t.me/naumov_universe/494" rel="noopener" target="_blank">
-<img alt="Telegram Тимура Наумова" src="assets/image-d2cea0d5014d.jpg"/>
+<picture><source media="(max-width: 760px)" srcset="assets/case-telegram-480.webp"/><img alt="Смартфон с сообщениями и бумажный самолёт" decoding="async" height="600" loading="lazy" src="assets/case-telegram-900.webp" width="900"/></picture>
 <div class="case-body"><div class="case-tag">Мой канал</div><div class="case-title">Telegram</div><div class="case-link">Открыть мой Telegram ↗</div></div>
 </a>
 </div>
@@ -272,7 +310,7 @@ footer{padding:30px 0 60px}
 </main>
 <footer>
 <div class="container footer-card">
-<div class="footer-brand"><img alt="Expert Factory" src="assets/image-69f53ed58031.png"/><div><strong>EXPERT FACTORY</strong><p>Я помогаю создавать собственные интернет-магазины и независимые системы онлайн-продаж.</p></div></div>
+<div class="footer-brand"><img alt="Expert Factory" height="63" loading="lazy" src="assets/expert-factory-logo.webp" width="128"/><div><strong>EXPERT FACTORY</strong><p>Я помогаю создавать собственные интернет-магазины и независимые системы онлайн-продаж.</p></div></div>
 <div class="quick"><a href="https://piazzaroma.ru/" target="_blank">PIAZZA ROMA</a><a href="https://www.catorella.shop/" target="_blank">Catorella Shop</a><a href="https://www.instagram.com/expert_factory/" target="_blank">Instagram</a><a href="https://t.me/naumov_universe/494" target="_blank">Telegram</a></div>
 </div>
 </footer>
