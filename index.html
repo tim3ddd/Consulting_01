@@ -6,6 +6,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Expert Factory — свой канал продаж вместо условий маркетплейсов</title>
 <meta content="Я помогаю селлерам уйти от комиссий, штрафов и зависимости от маркетплейсов, перенести каталог и запустить собственный интернет-магазин." name="description"/>
+<link as="image" fetchpriority="high" href="assets/hero-graphic-v2-480.webp" imagesizes="(max-width:760px) calc(100vw - 20px), (max-width:1100px) calc(100vw - 32px), 48vw" imagesrcset="assets/hero-graphic-v2-480.webp 480w, assets/hero-graphic-v2-900.webp 900w" rel="preload" type="image/webp"/>
 <style>
 :root{
   --bg:#f3f8f6;
@@ -53,8 +54,7 @@ h1{font-size:clamp(38px,6vw,70px);line-height:.98;letter-spacing:-.045em;margin:
 .stat strong{display:block;font-size:29px;line-height:1;color:var(--mint-dark);margin-bottom:8px}
 .stat span{color:var(--muted);font-size:14px}
 .visual-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:34px;overflow:hidden;box-shadow:var(--shadow)}
-.visual-card>picture{display:block}
-.visual-card>picture>img{width:100%;height:auto}
+.visual-card>img{width:100%;height:auto}
 .visual-caption{position:absolute;left:18px;right:18px;bottom:18px;padding:16px 18px;background:rgba(255,255,255,.91);backdrop-filter:blur(12px);border:1px solid rgba(19,32,29,.08);border-radius:20px}
 .visual-caption strong{display:block;font-size:21px;margin-bottom:5px}
 .visual-caption span{color:var(--muted)}
@@ -69,14 +69,12 @@ section{padding:44px 0}
 .card p{margin:0;color:var(--muted)}
 .expert{display:grid;grid-template-columns:.92fr 1.08fr;gap:24px;align-items:center}
 .expert-image{background:#fff;border:1px solid var(--line);border-radius:31px;overflow:hidden;box-shadow:var(--shadow)}
-.expert-image picture{display:block}
 .expert-image img{width:100%}
 .expert ul{margin:18px 0 0;padding-left:20px}
 .expert li{margin-bottom:11px;color:#2b3c37}
 .cases{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:21px}
 .case{background:#fff;border:1px solid var(--line);border-radius:30px;overflow:hidden;box-shadow:var(--shadow);transition:.2s ease}
 .case:hover{transform:translateY(-4px)}
-.case picture{display:block}
 .case img{width:100%;aspect-ratio:4/3;object-fit:cover;background:#eef3f1}
 .case-body{padding:20px 20px 22px}
 .case-title{font-size:29px;font-weight:880;letter-spacing:-.02em;margin:12px 0 17px;line-height:1.05}
@@ -116,7 +114,10 @@ footer{padding:30px 0 60px}
   nav{display:none}
 }
 @media(max-width:760px){
+  :root{--shadow:0 10px 24px rgba(23,53,44,.08)}
   .container{width:min(var(--container),calc(100% - 20px))}
+  header{background:#fbfdfc;backdrop-filter:none}
+  .visual-caption{backdrop-filter:none}
   .brand-mark{width:105px}
   .brand-copy span{display:none}
   .feature-grid,.stats,.grid3,.process{grid-template-columns:1fr}
@@ -169,10 +170,7 @@ footer{padding:30px 0 60px}
 </div>
 </div>
 <div class="visual-card">
-<picture>
-<source media="(max-width: 760px)" srcset="assets/hero-graphic-v2-480.webp"/>
-<img alt="Expert Factory — свой канал продаж вместо условий маркетплейсов" decoding="async" fetchpriority="high" height="1125" src="assets/hero-graphic-v2-900.webp" width="900"/>
-</picture>
+<img alt="Expert Factory — свой канал продаж вместо условий маркетплейсов" decoding="async" fetchpriority="high" height="1125" sizes="(max-width:760px) calc(100vw - 20px), (max-width:1100px) calc(100vw - 32px), 48vw" src="assets/hero-graphic-v2-480.webp" srcset="assets/hero-graphic-v2-480.webp 480w, assets/hero-graphic-v2-900.webp 900w" width="900"/>
 <div class="visual-caption"><strong>Тимур Наумов</strong><span>Я помогаю перейти от чужой площадки к своему интернет-магазину, своему трафику и своей клиентской базе.</span></div>
 </div>
 </div>
@@ -189,7 +187,7 @@ footer{padding:30px 0 60px}
 </section>
 <section>
 <div class="container expert">
-<div class="expert-image"><picture><source media="(max-width: 760px)" srcset="assets/expert-graphic-v2-480.webp"/><img alt="Тимур Наумов — опыт в онлайн-бизнесе, разработке и маркетинге" decoding="async" height="1000" loading="lazy" src="assets/expert-graphic-v2-800.webp" width="800"/></picture></div>
+<div class="expert-image"><img alt="Тимур Наумов — опыт в онлайн-бизнесе, разработке и маркетинге" decoding="async" height="1000" loading="lazy" sizes="(max-width:760px) calc(100vw - 20px), (max-width:1100px) calc(100vw - 32px), 45vw" src="assets/expert-graphic-v2-480.webp" srcset="assets/expert-graphic-v2-480.webp 480w, assets/expert-graphic-v2-800.webp 800w" width="800"/></div>
 <div class="card">
 <div class="pill">Почему мне доверяют</div>
 <h2 style="font-size:clamp(30px,4vw,47px);line-height:1.02;letter-spacing:-.035em;margin:12px 0 15px">Я выстроил много онлайн-бизнесов и глубоко понимаю интернет-маркетинг и запуск онлайн-продаж</h2>
@@ -209,23 +207,23 @@ footer{padding:30px 0 60px}
 <div class="section-head"><div><div class="pill">Мои проекты и каналы</div><h2>Примеры моей работы</h2></div><p>Нажмите на нужную карточку, чтобы открыть проект, видео или социальную сеть.</p></div>
 <div class="cases">
 <a class="case" href="https://piazzaroma.ru/" rel="noopener" target="_blank">
-<picture><source media="(max-width: 760px)" srcset="assets/case-piazza-graphic-v3-480.webp"/><img alt="Тимур Наумов представляет проект PIAZZA ROMA с актуальной витриной магазина" decoding="async" height="675" loading="lazy" src="assets/case-piazza-graphic-v3-900.webp" width="900"/></picture>
+<img alt="Тимур Наумов представляет проект PIAZZA ROMA с актуальной витриной магазина" decoding="async" height="675" loading="lazy" sizes="(max-width:1100px) calc(100vw - 32px), 50vw" src="assets/case-piazza-graphic-v3-480.webp" srcset="assets/case-piazza-graphic-v3-480.webp 480w, assets/case-piazza-graphic-v3-900.webp 900w" width="900"/>
 <div class="case-body"><div class="case-tag">Я реализовал на Яндекс КИТ</div><div class="case-title">PIAZZA ROMA</div><div class="case-link">Открыть мой проект ↗</div></div>
 </a>
 <a class="case" href="https://www.catorella.shop/" rel="noopener" target="_blank">
-<picture><source media="(max-width: 760px)" srcset="assets/case-catorella-graphic-v3-480.webp"/><img alt="Тимур Наумов представляет Catorella Shop с актуальной витриной магазина" decoding="async" height="675" loading="lazy" src="assets/case-catorella-graphic-v3-900.webp" width="900"/></picture>
+<img alt="Тимур Наумов представляет Catorella Shop с актуальной витриной магазина" decoding="async" height="675" loading="lazy" sizes="(max-width:1100px) calc(100vw - 32px), 50vw" src="assets/case-catorella-graphic-v3-480.webp" srcset="assets/case-catorella-graphic-v3-480.webp 480w, assets/case-catorella-graphic-v3-900.webp 900w" width="900"/>
 <div class="case-body"><div class="case-tag">Я запрограммировал через Codex + AI</div><div class="case-title">Catorella Shop</div><div class="case-link">Открыть мой проект ↗</div></div>
 </a>
 <a class="case" href="https://rutube.ru/video/0e841e8b43f56aef24190c836312f5c8/" rel="noopener" target="_blank">
-<picture><source media="(max-width: 760px)" srcset="assets/case-rutube-graphic-v2-480.webp"/><img alt="Видео Expert Factory с Тимуром Наумовым" decoding="async" height="675" loading="lazy" src="assets/case-rutube-graphic-v2-900.webp" width="900"/></picture>
+<img alt="Видео Expert Factory с Тимуром Наумовым" decoding="async" height="675" loading="lazy" sizes="(max-width:1100px) calc(100vw - 32px), 50vw" src="assets/case-rutube-graphic-v2-480.webp" srcset="assets/case-rutube-graphic-v2-480.webp 480w, assets/case-rutube-graphic-v2-900.webp 900w" width="900"/>
 <div class="case-body"><div class="case-tag">Мои видео</div><div class="case-title">Rutube</div><div class="case-link">Смотреть моё видео ↗</div></div>
 </a>
 <a class="case" href="https://www.instagram.com/expert_factory/" rel="noopener" target="_blank">
-<picture><source media="(max-width: 760px)" srcset="assets/case-instagram-graphic-v2-480.webp"/><img alt="Instagram Expert Factory с Тимуром Наумовым" decoding="async" height="675" loading="lazy" src="assets/case-instagram-graphic-v2-900.webp" width="900"/></picture>
+<img alt="Instagram Expert Factory с Тимуром Наумовым" decoding="async" height="675" loading="lazy" sizes="(max-width:1100px) calc(100vw - 32px), 50vw" src="assets/case-instagram-graphic-v2-480.webp" srcset="assets/case-instagram-graphic-v2-480.webp 480w, assets/case-instagram-graphic-v2-900.webp 900w" width="900"/>
 <div class="case-body"><div class="case-tag">Мой контент</div><div class="case-title">Instagram Expert Factory</div><div class="case-link">Перейти в мой Instagram ↗</div></div>
 </a>
 <a class="case" href="https://t.me/naumov_universe/494" rel="noopener" target="_blank">
-<picture><source media="(max-width: 760px)" srcset="assets/case-telegram-graphic-v2-480.webp"/><img alt="Telegram-канал Тимура Наумова об онлайн-бизнесе" decoding="async" height="675" loading="lazy" src="assets/case-telegram-graphic-v2-900.webp" width="900"/></picture>
+<img alt="Telegram-канал Тимура Наумова об онлайн-бизнесе" decoding="async" height="675" loading="lazy" sizes="(max-width:1100px) calc(100vw - 32px), 50vw" src="assets/case-telegram-graphic-v2-480.webp" srcset="assets/case-telegram-graphic-v2-480.webp 480w, assets/case-telegram-graphic-v2-900.webp 900w" width="900"/>
 <div class="case-body"><div class="case-tag">Мой канал</div><div class="case-title">Telegram</div><div class="case-link">Открыть мой Telegram ↗</div></div>
 </a>
 </div>
