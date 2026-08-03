@@ -48,7 +48,7 @@ h1{font-size:clamp(38px,6vw,70px);line-height:.98;letter-spacing:-.045em;margin:
 .stat span{color:var(--muted);font-size:14px}
 .visual-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:34px;overflow:hidden;box-shadow:var(--shadow)}
 .visual-card>img{width:100%;height:auto!important;object-fit:contain;background:#eef3f1}
-.visual-caption{position:absolute;left:18px;right:18px;bottom:18px;padding:16px 18px;background:rgba(255,255,255,.96);border:1px solid rgba(19,32,29,.08);border-radius:20px}
+.visual-caption{position:relative;margin:16px 18px 18px;padding:16px 18px;background:#fff;border:1px solid rgba(19,32,29,.08);border-radius:20px}
 .visual-caption strong{display:block;font-size:21px;margin-bottom:5px}
 .visual-caption span{color:var(--muted)}
 section{padding:44px 0}
